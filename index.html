@@ -3424,11 +3424,11 @@
     </div>
 
     
-        <audio id="audio"   >
+        <audio id="audio"  >
             </audio>
     <div class="module gf_module- gf_module--lg gf_module--md gf_module--sm gf_module--xs ">
         <div class="gla_music_icon btn-play-audio">
-            <button class="btn-musicf">
+            <button class="btn-musicf" onlick="playVideo()">
                 <i class="fa fa-music after-slash"></i>
             </button>
         </div>
@@ -3572,6 +3572,33 @@
       },1000);
 
 
-    
+  function loadYouTubePlayerAPI() {
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  }
+
+  // Function to be called when the YouTube player API is loaded
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      events: {
+        'onReady': onPlayerReady
+      }
+    });
+  }
+
+  // Function to be called when the YouTube player is ready
+  function onPlayerReady(event) {
+    // You can do something when the player is ready
+  }
+
+  // Function to play the YouTube video
+  function playVideo() {
+    player.playVideo();
+  }
+  
+  // Load the YouTube player API
+  loadYouTubePlayerAPI();
 
 </script>
