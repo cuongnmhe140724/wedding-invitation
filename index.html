@@ -80,7 +80,8 @@
     <div id="main-page" text_alert_rsvp="Xin cảm ơn phản hồi của bạn!" alert_pls_name="Vui lòng nhập Tên!" send_text_alert_rsvp="Gửi lời nhắn hoặc lời chúc" btn_send_mb="Gửi đi">
     <div class="box-tsimple-online">
                  <div class="cover">
-            <img src="https://app.thesimple.vn/uploads/contact/657296c08536e-GIF_ragiengacuoie.gif">
+            <img src="static/Ông Bà Hà Trường Thịnh Đặng Hải Oanh Lục Ngạn, Bắc Giang (3).gif">
+            <!-- <div style="width:100%;height:0;padding-bottom:160%;position:relative;"><iframe src="https://giphy.com/embed/Zb4JtCNre7GoU8HzUN" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/Zb4JtCNre7GoU8HzUN">via GIPHY</a></p> -->
         </div>
         
                         <div class="box-ab-if mb-20 mt-20">
@@ -3428,12 +3429,11 @@
             </audio>
     <div class="module gf_module- gf_module--lg gf_module--md gf_module--sm gf_module--xs ">
         <div class="gla_music_icon btn-play-audio">
-            <button class="btn-musicf" onlick="playVideo()">
+            <button class="btn-musicf" onlick="playAudio()">
                 <i class="fa fa-music after-slash"></i>
             </button>
         </div>
     </div>
-
     
     
     
@@ -3572,33 +3572,18 @@
       },1000);
 
 
-  function loadYouTubePlayerAPI() {
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  }
+  // Function to play the YouTube audio
+  function playAudio() {
+    // Create an audio element
+    var audio = new Audio();
+    
+    // Set the source of the audio to the YouTube video URL
+    audio.src = "https://www.youtube.com/watch?v=VTK92nZIpJw";
 
-  // Function to be called when the YouTube player API is loaded
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      events: {
-        'onReady': onPlayerReady
-      }
-    });
-  }
+    // Play the audio
+    audio.play();
 
-  // Function to be called when the YouTube player is ready
-  function onPlayerReady(event) {
-    // You can do something when the player is ready
+    console.log("alo");
   }
-
-  // Function to play the YouTube video
-  function playVideo() {
-    player.playVideo();
-  }
-  
-  // Load the YouTube player API
-  loadYouTubePlayerAPI();
 
 </script>
